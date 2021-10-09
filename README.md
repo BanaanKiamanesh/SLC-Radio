@@ -1,6 +1,6 @@
 # SLC-Radio (Arduino and Processing3 Based SuperLowCost Radio Controller for every RC thing)
 
-This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Both Arduino &amp; Processing 3, that can be used for DRONES and RC everything basically!
+This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Arduino & Processing 3, that can be used for DRONES and basically RC everything!
 
 ## **Code Contains of 2 Major Parts**
 
