@@ -16,7 +16,7 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Both Arduino &a
 - **UI made with Processing3**
     > This is the part that Starts the UI in the Computer and Lets you Produce Control Commands. It then sends it into the Ground Control Using Serial-Communication-Protocol.
     
-    > Also all the Produced Input Values (Joysticks, the Buttons and the Sliders) show up in an artificial Monitor, shown in the middle of the interface. 
+    > Also all the Produced Input Values (Joysticks, Buttons and the Sliders) show up in an artificial Monitor, shown in the middle of the interface. 
 
     > The portable desktop app is also available in the "App" directory for Linux. But consider that the Serial port to the Arduino should be changed into custom, if it is not the first.
 
