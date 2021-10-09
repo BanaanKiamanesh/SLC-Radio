@@ -21,7 +21,7 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Both Arduino &a
     > The portable desktop app is also available in the "App" directory for Linux. But consider that the Serial port to the Arduino should be changed into custom, if it is not the first.
 
 # ***Real Radio***
-> This is the hard-made version of the same Radio...
+> This is the hard-made version of the same Radio... (toooooooooo Noisy...)
 ![](Images/Real.jpg)
 
 # ***Final SLC Radio***
