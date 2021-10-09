@@ -13,8 +13,8 @@ int posY[] = {0, 1, 2, 3, 0, 1, 2, 3, 3};
 #include <nRF24L01.h>
 #include <RF24.h>
 
-////////////////////////////////////////////Test is Done on a Mega, So ((Change if needed))
-RF24 radio(48, 53); // CE, CSN
+////////////////////////////////////////////Radio Specs
+RF24 radio(7, 8); // CE, CSN
 const uint64_t pipe = 0xF0F0F0F0E1LL;
 
 ///////////////////////////////////////////Data Package to be Recieved
