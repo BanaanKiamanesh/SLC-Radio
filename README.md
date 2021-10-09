@@ -29,5 +29,5 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Both Arduino &a
 ![](Images/ArduinoNRFfritzing.jpg)
 ![](Images/GroundControl.jpg)
 
-> This is the custom made UI and the test LCD! Tried to make it as similar looking to the real one as possible!
+> This is the custom made UI and the test LCD! Tried to make it as similar looking to the real one as possible! (NO Noise!)
 ![](Images/UInLCDtester.PNG)
