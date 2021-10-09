@@ -18,10 +18,10 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Both Arduino &a
     
     > Also all the Produced Input Values (Joysticks, the Buttons and the Sliders) show up in an artificial Monitor, shown in the middle of the interface. 
 
-    > The portable desktop app is also available in the "App" directory for Linux and Windows. But consider that the Serial port to the Arduino should be changed into custom, if it is not the port #1. (No need to install java runtime =D )
+    > The portable desktop app is also available in the "App" directory for Linux. But consider that the Serial port to the Arduino should be changed into custom, if it is not the first.
 
 # ***Real Radio***
-> This is the hand-made version of the same Radio...
+> This is the hard-made version of the same Radio...
 ![](Images/Real.jpg)
 
 # ***Final SLC Radio***
