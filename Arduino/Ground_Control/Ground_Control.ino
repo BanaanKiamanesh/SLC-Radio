@@ -1,11 +1,4 @@
-String inputString = "Hi";
-bool isComplete = false;
-int Values[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-int operationNum = 0;
-const int maxOperationNum = 9;
-bool operationComplete = false;
-
-// Radio Setup
+//////////////////////////////////////////////////////Radio Setup and Hardware Properties
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
@@ -14,6 +7,15 @@ const byte CSN_P = 8;   // nRF CSN
 RF24 radio(CE_P, CSN_P); // nRF Object
 const uint64_t pipe = 0xF0F0F0F0E1LL;
 
+///////////////////////////////////////////////////////Initial Vars
+String inputString = "Hi";
+bool isComplete = false;
+int Values[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+int operationNum = 0;
+const int maxOperationNum = 9;
+bool operationComplete = false;
+
+///////////////////////////////////////////////////////Data Package to be Sent
 typedef struct {
   int Buttons;   // Buttons (Mode Indicator!)
   int PButton;   // Push Button #
@@ -29,11 +31,12 @@ typedef struct {
 
 ControlDef ControlPack;
 
+////////////////////////////////////////////////////////// Initial Setup
 void setup() {
   Serial.begin(115200);
   inputString.reserve(200);
 
-//  lcdInitialize();
+  //  lcdInitialize();
   Serial.write(operationNum + 65);
 
   RadioSetup();
@@ -49,11 +52,14 @@ void setup() {
   ControlPack.JR_X = 0;
 }
 
+// Every Thing is Handled Just Send it DUDE...!
 void loop() {
   radio.write(&ControlPack, sizeof(ControlPack));
   delay(10);
 }
 
+//////////////////////////////////////////////////////////////Read UpComing Serial Events from the Reciever
+////////////////////////////////////////////////////////////// and Update Input Reading Values to Send
 void serialEvent() {
   while (Serial.available() > 0) {
     char inChar = Serial.read();
@@ -95,8 +101,8 @@ void serialEvent() {
   }
 }
 
+////////////////////////////////////////////////////////////////////// Setup for NRF24L01 Module
 void RadioSetup() {
-
   // Radio Setup Start
   radio.begin();
   radio.openWritingPipe(pipe);
@@ -108,6 +114,6 @@ void RadioSetup() {
   radio.setAutoAck(1);
   radio.powerUp();
   radio.stopListening();
-  
+
   delay(100);
 }

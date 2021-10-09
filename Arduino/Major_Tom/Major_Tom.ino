@@ -1,19 +1,23 @@
+/////////////////////////////////////////////LCD I2C Setup
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27 , 20, 4);
 
+////////////////////////////////////////////Initial Vars for Serial Input
 int Values[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 const int valuesLen = 9;
 int posX[] = {3, 3, 3, 3, 12, 12, 12, 9, 15};
 int posY[] = {0, 1, 2, 3, 0, 1, 2, 3, 3};
 
-// Radio Setup
+////////////////////////////////////////////Radio Setup and Properties
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
+////////////////////////////////////////////Test is Done on a Mega, So ((Change if needed))
 RF24 radio(48, 53); // CE, CSN
 const uint64_t pipe = 0xF0F0F0F0E1LL;
 
+///////////////////////////////////////////Data Package to be Recieved
 typedef struct {
   int Buttons;   // Buttons (Mode Indicator!)
   int PButton;   // Push Button #
@@ -29,6 +33,7 @@ typedef struct {
 
 ControlDef ControlPack;
 
+//////////////////////////////////////////////////////////Initial Setup
 void setup() {
   RadioInit();
 
@@ -43,8 +48,10 @@ void setup() {
   ControlPack.JL_X = 0;
   ControlPack.JR_Y = 0;
   ControlPack.JR_X = 0;
+  delay(1000);
 }
 
+////////////////////////////////////////////////////Read UpComing Signals for NRF and Write into LCD
 void loop() {
   if (radio.available()) {
     radio.read(&ControlPack, sizeof(ControlPack));
@@ -55,6 +62,8 @@ void loop() {
   lcdPrint();
   delay(1);
 }
+
+////////////////////////////////////////////////////Take Care of Upcoming Data
 void ValueSet() {
   Values[7] = ControlPack.Buttons;
   Values[8] = ControlPack.PButton;
@@ -67,6 +76,7 @@ void ValueSet() {
   Values[2] = ControlPack.JR_X;
 }
 
+//////////////////////////////////////////////////Do the LCD Job...!
 void lcdPrint() {
 
   for (int i = 0; i < valuesLen - 2 ; i++) {
@@ -86,6 +96,7 @@ void lcdPrint() {
   lcd.print(Values[8]);
 }
 
+//////////////////////////////////////////////////Init LCD and Set Const Txt in Place
 void lcdInitialize() {
   lcd.init();
   lcd.backlight();
@@ -108,6 +119,7 @@ void lcdInitialize() {
   delay(100);
 }
 
+/////////////////////////////////////////////////////////Init Radio Chip (NRF24L01)
 void RadioInit() {
   radio.begin();
   radio.openReadingPipe(0, pipe);
