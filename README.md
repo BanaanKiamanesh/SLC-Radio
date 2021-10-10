@@ -25,7 +25,7 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Arduino & Proce
 ![](Images/Real.jpg)
 
 # ***Final SLC Radio***
-> Final Version of the Low-Cost-Radio
+> Final Version of the SLC-Radio Ground Control
 ![](Images/ArduinoNRFfritzing.jpg)
 ![](Images/GroundControl.jpg)
 
