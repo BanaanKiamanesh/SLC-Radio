@@ -6,7 +6,7 @@ This is a SLC (Super-Low-Cost) Radio-Transmitter with the use of Arduino & Proce
 
 - **Arduino** (This part itself contains 2 parts)
     - ***Ground Control***
-        > This is the Ground Staion that talks to the Computer from Serial Port and Sends Data into the reciever with the NRF24L01 module. The Hardware only contains of a arduino (UNO in my case(ofcourse any arduino can be used...)) and a NRF24L01+ module. With the CE connected to pin #7 of arduino, and CSN into 8. Schematic and the actual thing is shown below. I just putted into a case for beauty purposes!
+        > This is the Ground Station that talks to the Computer from Serial Port and Sends Data into the reciever with the NRF24L01 module. The Hardware only contains of a arduino (UNO in my case(ofcourse any arduino can be used...)) and a NRF24L01+ module. With the CE connected to pin #7 of arduino, and CSN into 8. Schematic and the actual thing is shown below. I just putted into a case for beauty purposes!
 
     - ***Major Tom***
         > This is the main Receiver that Can be connected into any device. but for the test purposes I've conneced a I2C-LCD into it. Surely the Code can be modified for the use.
